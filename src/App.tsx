@@ -9,16 +9,16 @@ const App = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-  const renderCount = useRef(0); // เก็บค่า count ข้าม render
-  const [ignored, setIgnored] = useState(0); // ใช้บังคับ render
+  const renderCount = useRef(0);
+  const [ignored, setIgnored] = useState(0);
 
   const incrementRef = () => {
-    renderCount.current += 1; // เพิ่มค่า ref
+    renderCount.current += 1;
     console.log("กดเพิ่ม ref:", renderCount.current);
   };
 
   const forceRender = () => {
-    setIgnored(ignored + 1); // บังคับ render
+    setIgnored(ignored + 1);
     console.log("บังคับ render, ref:", renderCount.current);
   };
   const [count, setCount] = useState(0);
